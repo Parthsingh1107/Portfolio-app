@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas
 
 st.set_page_config(layout="wide")
 
@@ -9,10 +10,36 @@ with col1:
 
 with col2:
     st.title("Parth Singh")
-    content = """Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer"""
+    content = """
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    Hi, My name is Parth and I'm from India.I live in Canada and work as a software developer
+    """
     st.info(content)
 
 content2 = """ 
 Below you can find some of the apps I have built in Python. Feel free to contact me!
 """
 st.write(content2)
+
+col3, col4 = st.columns(2)
+
+df = pandas.read_csv("data.csv", sep=";")
+
+with col3:
+    for index, row in df[:10].iterrows():
+        st.header(row["title"])
+
+
+with col4:
+    for index, row in df[:10].iterrows():
+        st.header(row["title"])
